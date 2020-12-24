@@ -3,7 +3,7 @@ This repository contains the InfraSim, a generalised arc-node simulation model f
 
 ### Contributors
 **Project Lead:** Aman Majid (aman.majid@new.ox.ac.uk) <br>
-**Principal Investigator:** [Professor Jim Hall](https://www.eci.ox.ac.uk/people/jhall.html) <br>
+**Project Supervisor:** [Professor Jim Hall](https://www.eci.ox.ac.uk/people/jhall.html) <br>
 **Contributors and Collaborators**: <br>
 [Tony Downward](https://unidirectory.auckland.ac.nz/profile/a-downward), University of Auckland <br>
 
