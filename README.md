@@ -42,7 +42,7 @@ Get a [Gurobi license](https://www.gurobi.com/downloads/)
 
 Create project enviroment using the config file in this directory (only tested on macOS Big Sur):
 
-    conda env create --prefix ./env --file _config.yml
+    conda env create --prefix ./env --file config.yml
     conda activate ./env
 
 See the [demo notebook](https://github.com/amanmajid/InfraSim/blob/main/demo/demo.ipynb) for a small demonstration.
