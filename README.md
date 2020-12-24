@@ -38,6 +38,8 @@ The model requires [Gurobi](https://www.gurobi.com) and the associated [GurobiPy
 ### Getting started
 Download and clone this repository.
 
+Get a [Gurobi license](https://www.gurobi.com/downloads/)
+
 Create project enviroment using the config file in this directory (only tested on macOS Big Sur):
 
     conda env create --prefix ./env --file _config.yml

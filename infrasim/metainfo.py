@@ -16,9 +16,9 @@ metainfo = {
             'edges_header'          : ['Start','End','Commodity','Cost','Minimum','Maximum'],
             'flow_header'           : ['Day','Month','Year'],
             'edge_index_variables'  : ['Start','End','Commodity','Timestep'],
-            'infrasim_cache'        : '../data/__infrasim__/',
-            'outputs_figures'       : '../outputs/figures/',
-            'outputs_data'          : '../outputs/statistics/',
+            'infrasim_cache'        : '../data/demo/__infrasim__/',
+            'outputs_figures'       : '../outputs/demo/figures/',
+            'outputs_data'          : '../outputs/demo/statistics/',
             'temporal_resolution'   : 'daily',
             'scenario'              : 'baseline'
             }

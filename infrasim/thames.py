@@ -733,8 +733,8 @@ class Model():
         
         self.build_time = time.clock() - start_time
 
-        print(self.build_time, "seconds")
-        print('------------- MODEL BUILD COMPLETE -------------')
+        #print(self.build_time, "seconds")
+        #print('------------- MODEL BUILD COMPLETE -------------')
 
 
 
