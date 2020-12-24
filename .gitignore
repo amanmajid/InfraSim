@@ -5,6 +5,8 @@ data/__infrasim__/*
 data/csv/*
 data/spatial/*
 
-outputs/*
+outputs/figures/*
+outputs/statistics/*
+
 pycTests/*
 wathnet/*
