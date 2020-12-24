@@ -1,6 +1,6 @@
 ## Multi-Infrastructure Simulation Model (InfraSim)
 
-<img align="right" width="500" height="300" src="https://github.com/amanmajid/InfraSim/blob/main/demo/schematic.png">
+<img align="right" src="https://github.com/amanmajid/InfraSim/blob/main/demo/schematic.png">
 
 This repository contains the InfraSim, a generalised arc-node simulation model for modelling water-wastewater-energy systems. It dynamically analyses flows of water, wastewater, and electricity across the network using the multi-commodity flow formulation. 
 
