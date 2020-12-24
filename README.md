@@ -5,7 +5,7 @@ This repository contains the InfraSim, a generalised arc-node simulation model f
 
 ### Contributors
 **Project Lead:** Aman Majid (aman.majid@new.ox.ac.uk) <br>
-**Principal Investigator:** [Professor Jim Hall](https://www.eci.ox.ac.uk/people/jhall.html) <br>
+**Project Supervisor:** [Professor Jim Hall](https://www.eci.ox.ac.uk/people/jhall.html) <br>
 **Contributors and Collaborators**: <br>
 [Tony Downward](https://unidirectory.auckland.ac.nz/profile/a-downward), University of Auckland <br>
 
@@ -14,14 +14,14 @@ The repository contains the InfraSim source code. The model has been applied to 
 
 _demo/_
 - A Jupyter Notebook explaining the model theory, as well as a small demo model of a water-wastewater-energy network in London, UK.
-- Updated August 2020
+- Updated December 2020
 
-_data/_
+_data/demo/_
 - **spatial**: Shapefiles of node and edge data that can be opened in QGis.
-- **csv**: Time series nodal flow data.
+- **csv**: Time series demo nodal flow data.
 
 _infrasim/_
-- InfraSim source code can be found in model.py
+- InfraSim source code related to the Thames system can be found in thames.py
 - There are a series of other Python files that contain code for data pre-processing and post-processing.
 - Model metadata, parameters, and assumptions can also be found here.
 
@@ -44,14 +44,12 @@ Get a [Gurobi license](https://www.gurobi.com/downloads/)
 
 Create project enviroment using the config file in this directory (only tested on macOS Big Sur):
 
-    conda env create --prefix ./env --file _config.yml
+    conda env create --prefix ./env --file config.yml
     conda activate ./env
 
 See the [demo notebook](https://github.com/amanmajid/InfraSim/blob/main/demo/demo.ipynb) for a small demonstration.
 
 ### To Do
-- Create a Demo Notebook
-- Implement the InfraSim model using PuLP code to allow users to choose their solver
 - Implement the InfraSim model using Julia code to allow users to choose their solver
 - Apply InfraSim to a case-study of Israel, Palestine, and Jordan for a regional energy-water nexus analysis. The associated code will be uploaded here in future. 
 - Apply InfraSim to a case-study of Jamaica's water-energy network. The associated code will be uploaded here in future. 
