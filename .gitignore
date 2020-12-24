@@ -1,6 +1,10 @@
 _archived/*
 _manuscript/*
-data/*
+
+data/__infrasim__/*
+data/csv/*
+data/spatial/*
+
 outputs/*
 pycTests/*
 wathnet/*
