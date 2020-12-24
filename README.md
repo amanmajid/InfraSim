@@ -43,9 +43,7 @@ Create project enviroment using the config file in this directory (only tested o
     conda env create --prefix ./env --file _config.yml
     conda activate ./env
 
-See the [demo
-notebook](https://github.com/xxxx) for a
-small demonstration.
+See the [demo notebook](https://github.com/amanmajid/InfraSim/blob/main/demo/demo.ipynb) for a small demonstration.
 
 ### To Do
 - Create a Demo Notebook

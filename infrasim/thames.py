@@ -22,7 +22,7 @@ from .metainfo import *
 from .params import *
 
 
-class infrasim():
+class Model():
 
 
 
