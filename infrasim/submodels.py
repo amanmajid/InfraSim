@@ -7,7 +7,7 @@
 
 from . import utils
 
-def solar_pv(area=10,month=7,efficiency=0.86,irradiance=20):
+def solar_pv(area=10,month=7,panel_yield=0.156,irradiance=20):
     '''
     Solar PV model
 
@@ -15,13 +15,13 @@ def solar_pv(area=10,month=7,efficiency=0.86,irradiance=20):
     ----------
 
         *area* : float, default 10
-            PV array area
+            PV array area (square meters)
 
         *month* : int, default 7
-            Current month (important for seasonal variability)
+            Current month (to compute seasonal performance ratio)
 
-        *efficiency* : float, default 0.86
-            Panel efficiency
+        *panel_yield* : float, default 0.156
+            Solar panel yield or efficiency (%)
 
         *irradiance* : float, default 20
             Incoming irradiance
@@ -33,11 +33,21 @@ def solar_pv(area=10,month=7,efficiency=0.86,irradiance=20):
 
     '''
     # seasonal factors
-    seasonal_factors = {1:0.0149, 2:0.0394, 3:0.0707, 4:0.1237,
-                        5:0.1597, 6:0.1767, 7:0.1863, 8:0.1728,
-                        9:0.1498, 10:0.1003, 11:0.0522, 12:0.0217}
+    performance_ratio = {1  :   0.62,
+                         2  :   0.62,
+                         3  :   0.62,
+                         4  :   0.50,
+                         5  :   0.38,
+                         6  :   0.38,
+                         7  :   0.38,
+                         8  :   0.38,
+                         9  :   0.42,
+                         10 :   0.42,
+                         11 :   0.42,
+                         12 :   0.62}
+
     # compute outputs
-    output = area * seasonal_factors[month] * (irradiance*24*0.001) * efficiency
+    output = area * (irradiance*0.001) * panel_yield * performance_ratio[month]
     return output
 
 def wind_vestas2(wss=10):
@@ -59,8 +69,13 @@ def wind_vestas2(wss=10):
 
     # compute GWh per annum
     if wss>9:
+        ''' cut out speed '''
         output = 11.5
+    elif wss<3:
+        ''' cut in speed '''
+        output = 0
     else:
+        ''' power curve approximation '''
         output = 1.3328 * wss - 0.0939
     # convert to kWh per day
     output = utils.gwh_to_kwh(output/365)

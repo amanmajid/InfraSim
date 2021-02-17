@@ -134,20 +134,7 @@ class Model():
 
     def build(self):
         '''
-
-        Contents:
-        -------
-
-            1. Variables
-            2. Objective Function
-            3. Generic Constraints
-
-
-        Returns
-        -------
-        None.
-
-
+        Formulation of optimisation model
         '''
 
         # start timing
@@ -629,8 +616,8 @@ class Model():
         
         self.build_time = time.clock() - start_time
 
-        #print(self.build_time, "seconds")
-        #print('------------- MODEL BUILD COMPLETE -------------')
+        print(self.build_time, "seconds")
+        print('------------- MODEL BUILD COMPLETE -------------')
 
 
 
