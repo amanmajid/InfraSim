@@ -3,6 +3,7 @@ from shapely.geometry import Point
 import snkit
 from .metainfo import *
 
+
 def add_graph_topology(nodes,edges,id_attribute='ID',save=False,label=False):
     '''
     Function to add i,j,k notation to edges
@@ -23,10 +24,15 @@ def add_graph_topology(nodes,edges,id_attribute='ID',save=False,label=False):
         edges.to_file(driver='ESRI Shapefile', filename='edges_processed.shp')
     return edges
 
+
 def drop_geom(nodes,edges):
+    '''
+    Function to drop geom from shapefiles
+    '''
     nodes = nodes.drop('geometry',axis=1)
     edges = edges.drop('geometry',axis=1)
     return nodes, edges
+
 
 def graph_to_csv(nodes,edges,output_dir=''):
     '''
