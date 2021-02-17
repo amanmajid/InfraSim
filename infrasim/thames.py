@@ -495,10 +495,9 @@ class Model():
                 self.model.addConstrs((
                     self.arcFlows.sum(i,'*','electricity',t)  \
                         <= submodels.solar_pv(area=solar_nodes.loc[solar_nodes.Name==i,'Capacity'],
-                            month=month_ref[t],efficiency=constants['solar_efficiency'],\
-                                irradiance=solar_irradiance['rsds',t]) \
-                                    for t in self.timesteps \
-                                        for i in solar_nodes.Name),'solar_supply')
+                            month=month_ref[t],irradiance=solar_irradiance['rsds',t]) \
+                                for t in self.timesteps \
+                                    for i in solar_nodes.Name),'solar_supply')
 
             #---
             # wind

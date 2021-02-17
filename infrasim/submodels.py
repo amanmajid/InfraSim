@@ -7,7 +7,7 @@
 
 from . import utils
 
-def solar_pv(area=10,month=7,panel_yield=0.156,irradiance=20):
+def solar_pv(area=10,month=7,panel_yield=0.76,irradiance=20):
     '''
     Solar PV model
 
@@ -20,7 +20,7 @@ def solar_pv(area=10,month=7,panel_yield=0.156,irradiance=20):
         *month* : int, default 7
             Current month (to compute seasonal performance ratio)
 
-        *panel_yield* : float, default 0.156
+        *panel_yield* : float, default 0.55
             Solar panel yield or efficiency (%)
 
         *irradiance* : float, default 20
