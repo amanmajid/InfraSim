@@ -54,8 +54,10 @@ See the [demo notebook](https://github.com/amanmajid/InfraSim/blob/main/demo/dem
 
 ### To Do
 - Implement the InfraSim model using Julia code to allow users to choose their solver
-- Apply InfraSim to a case-study of Israel, Palestine, and Jordan for a regional energy-water nexus analysis. The associated code will be uploaded here in future. 
-- Apply InfraSim to a case-study of Jamaica's water-energy network. The associated code will be uploaded here in future. 
+
+### Future extensions
+- InfraSim.JV: a model for the energy-water system in Israel, Palestine, and Jordan
+- InfraSim.Jamaica: a model for the water system in Jamaica
 
 ### Citing Research
 Coming soon...
