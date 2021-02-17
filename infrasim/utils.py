@@ -24,25 +24,30 @@ def kwh_to_gwh(v):
     '''
     return v*0.000001
 
+
 def gwh_to_kwh(v):
     '''Gigawatt hours to Kilowatt hours
     '''
     return v/0.000001
+
 
 def cmd_to_mld(v):
     '''Cubic meters per day to megalitres per day
     '''
     return v/0.001
 
+
 def mld_to_cmd(v):
     '''Megalitres per day to cubic meters per day
     '''
     return v*0.001
 
+
 def lps_to_cmps(v):
     '''Litres per second to cubic meters per second
     '''
     return v*0.001
+
 
 def seconds_to_hours(v):
     '''Convert seconds to hours
@@ -58,12 +63,14 @@ def create_dir(path):
     if not os.path.exists(path):
         os.makedirs(path)
 
+
 def tidy(flows):
     ''' Convert supply/demand data to tidy format '''
     flows['Timestep'] = [i for i in range(1,len(flows)+1)]
     id_vars = metainfo['flow_header'] + ['Timestep']
     tidy = flows.melt(id_vars=id_vars,var_name='Node',value_name='Value')
     return tidy
+
 
 def map_timesteps_to_date(flows,mappable):
     ''' Function to map dates to timesteps '''
@@ -73,6 +80,7 @@ def map_timesteps_to_date(flows,mappable):
     # perform merge
     mapped = pd.merge(mappable,time_ref,on='Timestep',how='right')
     return mapped
+
 
 def add_time_to_edges(flows,edges):
     ''' Function to add time indices to edge data'''
@@ -99,6 +107,7 @@ def add_time_to_edges(flows,edges):
     new_edges = new_edges[col_order]
     return new_edges
 
+
 def check_integrity():
     ''' Check integrity of nodes and edges data'''
     # nodes not in edge data
@@ -110,16 +119,19 @@ def check_integrity():
     #print('> Integrity check completed with ' + int(errors) ' errors')
     errors = []
 
+
 def arc_indicies_as_dict(self,var_name):
     ''' Function to convert edge indices dataframe to dict '''
     asDict = self.edge_indices[self.indices+[var_name]].set_index(keys=self.indices)[var_name].to_dict()
     return asDict
+
 
 def flows_as_dict(flows):
     ''' '''
     flows_dict = flows[['Node','Timestep','Value']]
     flows_dict = flows_dict.set_index(keys=['Node','Timestep']).to_dict()['Value']
     return flows_dict
+
 
 def add_super_source(nodes,edges,commodities,**kwargs):
     ''' Add super source to edges '''
@@ -135,6 +147,7 @@ def add_super_source(nodes,edges,commodities,**kwargs):
     new_edges = pd.concat(new_edges,ignore_index=True)
     return edges.append(new_edges, ignore_index=True)
 
+
 def add_super_sink(nodes,edges,commodities,**kwargs):
     ''' Add super sinks to edges '''
     new_edges = []
@@ -148,6 +161,7 @@ def add_super_sink(nodes,edges,commodities,**kwargs):
         new_edges.append(tmp_edges)
     new_edges = pd.concat(new_edges,ignore_index=True)
     return edges.append(new_edges, ignore_index=True)
+
 
 def normalise_column(df_column):
     normalised_column = (df_column-df_column.min()) / (df_column.max()-df_column.min())
@@ -175,6 +189,7 @@ def get_nodes(nodes,index_column,lookup,index_column2=None,lookup2=None,index_co
         idx_nodes = nodes.loc[(nodes[index_column]==lookup)]
     return idx_nodes
 
+
 def get_node_names(nodes,index_column,lookup,index_column2=None,lookup2=None,index_column3=None,lookup3=None,index_column4=None,lookup4=None):
     ''' Get nodes of particular type and sector '''
     if index_column2 is not None and index_column3 is not None and index_column4 is not None:
@@ -193,10 +208,12 @@ def get_node_names(nodes,index_column,lookup,index_column2=None,lookup2=None,ind
         idx_nodes = nodes.loc[(nodes[index_column]==lookup)].Name.to_list()
     return idx_nodes
 
+
 def get_flow_at_nodes(flows,list_of_nodes):
     ''' Get flows of specific nodes '''
     idx_flows = flows.loc[flows.Node.isin(list_of_nodes)].reset_index(drop=True)
     return idx_flows
+
 
 def update_scenario(edges,connectivity_dict):
     ''' Update edges dataframe to match scenario '''

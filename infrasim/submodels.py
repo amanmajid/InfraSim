@@ -50,6 +50,7 @@ def solar_pv(area=10,month=7,panel_yield=0.76,irradiance=20):
     output = area * (irradiance*0.001) * panel_yield * performance_ratio[month]
     return output
 
+
 def wind_vestas2(wss=10):
     '''
     Wind Turbine of the Vestas 2.2 MW turbine
