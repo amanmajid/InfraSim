@@ -13,7 +13,7 @@ This repository contains the InfraSim, a generalised arc-node simulation model f
 [Tony Downward](https://unidirectory.auckland.ac.nz/profile/a-downward), University of Auckland <br>
 
 ### What's Here
-The repository contains the InfraSim source code. The model has been applied to a case-study from the Thames catchment, England, and will be expanded to other cases in future. These cases serve as a guide for other users to apply the InfraSim model to their areas of interest. An overview of each directory within the repository is shown below.
+The repository contains the InfraSim source code. The model has been applied to a case-study from the Thames basin, England, and will be expanded to other cases in future. These cases serve as a guide for other users to apply the InfraSim model to their areas of interest. An overview of each directory within the repository is shown below.
 
 _demo/_
 - A Jupyter Notebook explaining the model theory, as well as a small demo model of a water-wastewater-energy network in London, UK.
