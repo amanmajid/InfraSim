@@ -1,3 +1,5 @@
+[![DOI](https://zenodo.org/badge/129739785.svg)](https://doi.org/10.5281/zenodo.5207328)
+
 ## Multi-Infrastructure Simulation Model (InfraSim)
 
 <!---
